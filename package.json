@@ -1,18 +1,18 @@
 {
-  "name": "typescript-imports-sort",
-  "displayName": "Typescript Imports Sort",
+  "name": "typescript-imports-sortable",
+  "displayName": "Typescript Imports Sortable",
   "description": "Sorts import statements in Typescript code",
   "version": "1.13.0",
-  "publisher": "nsoult",
+  "publisher": "Nim Anderson",
   "license": "MIT",
   "icon": "images/icon.png",
   "bugs": {
-    "url": "https://github.com/neilsoult/typescript-imports-sort/issues"
+    "url": "https://github.com/nimothy/typescript-imports-sort/issues"
   },
-  "homepage": "https://github.com/neilsoult/typescript-imports-sort/blob/master/README.md",
+  "homepage": "https://github.com/nimothy/typescript-imports-sort/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/neilsoult/typescript-imports-sort.git"
+    "url": "https://github.com/nimothy/typescript-imports-sort.git"
   },
   "engines": {
     "vscode": "^1.32.0"
@@ -34,13 +34,13 @@
   "activationEvents": [
     "onLanguage:typescript",
     "onLanguage:typescriptreact",
-    "onCommand:extension.typescriptImportsSort"
+    "onCommand:extension.typescriptImportsSortable"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.typescriptImportsSort",
+        "command": "extension.typescriptImportsSortable",
         "title": "Sort imports"
       }
     ],
@@ -113,6 +113,15 @@
             "relativeUpLevel",
             "package"
           ]
+        },
+        "typescript.extension.sortImports.pathSortOrderOverride": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "When sorting imports, this controls which packages should be excluded from the system, and instead moved to the top of the import list in order, packages should be expressed by path",
+          "default": []
         },
         "typescript.extension.sortImports.quoteStyle": {
           "type": "string",

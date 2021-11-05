@@ -1,3 +1,4 @@
+import { options } from './../options/index';
 import * as vscode from 'vscode';
 import { DestructedImport, TypescriptImport } from '../interfaces';
 
@@ -34,15 +35,15 @@ const parseDestructiveImports = (destructiveImports: string): DestructedImport[]
     }
 
     return destructiveImports.split(',')
-    .map((destructiveImport) => {
+        .map((destructiveImport) => {
 
-        const match = destructingImportTokenRegex.exec(destructiveImport);
-        return {
-            alias: match[4],
-            importName: match[1]
-        };
+            const match = destructingImportTokenRegex.exec(destructiveImport);
+            return {
+                alias: match[4],
+                importName: match[1]
+            };
 
-    });
+        });
 
 };
 
@@ -61,7 +62,7 @@ export const parseImportNodes = (document: vscode.TextDocument) => {
     let match;
     while (match = importRegex.exec(source)) {
 
-        // console.log('import regex match', match);
+        console.log('import regex match', match);
         imports.push({
             default: match[5] || match[18],
             namedImports: parseDestructiveImports(match[6] || match[19]),
