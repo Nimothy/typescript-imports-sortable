@@ -15,7 +15,18 @@ export const sortImports = (document: vscode.TextDocument) => {
         return vscode.TextEdit.delete(importClause.range);
 
     });
-    edits.push(vscode.TextEdit.insert(new vscode.Position(0, 0), sortedImportText));
+
+    let importStartIndex = 0;
+    for (let index = 0; index < document.lineCount; index++) {
+        const line = document.lineAt(index);
+
+        if (line.text.startsWith('import')) {
+            importStartIndex = index;
+            break;
+        }
+    }
+
+    edits.push(vscode.TextEdit.insert(new vscode.Position(importStartIndex, 0), sortedImportText));
 
     return edits;
 

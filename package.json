@@ -2,7 +2,7 @@
   "name": "typescript-imports-sortable",
   "displayName": "Typescript Imports Sortable",
   "description": "Sorts import statements in Typescript code",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "publisher": "Nim Anderson",
   "license": "MIT",
   "icon": "images/icon.png",
@@ -153,24 +153,24 @@
       "editor/context": [
         {
           "when": "resourceLangId == typescript && !inDebugMode",
-          "command": "extension.typescriptImportsSort",
+          "command": "extension.typescriptImportsSortable",
           "group": "1_modification"
         },
         {
           "when": "resourceLangId == typescriptreact && !inDebugMode",
-          "command": "extension.typescriptImportsSort",
+          "command": "extension.typescriptImportsSortable",
           "group": "1_modification"
         }
       ],
       "editor/title/context": [
         {
           "when": "resourceLangId == typescript && !inDebugMode",
-          "command": "extension.typescriptImportsSort",
+          "command": "extension.typescriptImportsSortable",
           "group": "1_modification"
         },
         {
           "when": "resourceLangId == typescriptreact && !inDebugMode",
-          "command": "extension.typescriptImportsSort",
+          "command": "extension.typescriptImportsSortable",
           "group": "1_modification"
         }
       ]
@@ -178,12 +178,12 @@
     "keybindings": [
       {
         "when": "resourceLangId == typescript && editorTextFocus && !inDebugMode",
-        "command": "extension.typescriptImportsSort",
+        "command": "extension.typescriptImportsSortable",
         "key": "f10"
       },
       {
         "when": "resourceLangId == typescriptreact && editorTextFocus && !inDebugMode",
-        "command": "extension.typescriptImportsSort",
+        "command": "extension.typescriptImportsSortable",
         "key": "f10"
       }
     ]

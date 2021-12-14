@@ -7,7 +7,7 @@ let sortOnSaveDisposer: vscode.Disposable;
 
 export const activate = (context: vscode.ExtensionContext) => {
 
-    const sortOnCommandDisposer = vscode.commands.registerCommand('extension.typescriptImportsSort', () => {
+    const sortOnCommandDisposer = vscode.commands.registerCommand('extension.typescriptImportsSortable', () => {
 
         if (options.get('enableJavascript') && isFileJavascript() || isFileTypescript()) {
 
@@ -73,7 +73,7 @@ const disableFileWatcher = () => {
 };
 
 // this method is called when your extension is deactivated
-export const deactivate =  () => {
+export const deactivate = () => {
 
     disableFileWatcher();
 
